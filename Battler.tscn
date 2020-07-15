@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Mainchar/Mainchar1.png" type="Texture" id=1]
+
+[node name="Battler" type="Position2D"]
+
+[node name="MainChar" type="Position2D" parent="."]
+
+[node name="MainChar" type="Sprite" parent="MainChar"]
+texture = ExtResource( 1 )
