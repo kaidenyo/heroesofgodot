@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://WorldObjects/Candlesticks/Candlestick_low.tscn" type="PackedScene" id=1]
+[ext_resource path="res://NPCENEMYPLAYER/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/2D Pixel Dungeon Asset Pack/character and tileset/Background.png" type="Texture" id=3]
+[ext_resource path="res://NPCENEMYPLAYER/NPC/NPC.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WorldObjects/Encounter.tscn" type="PackedScene" id=5]
+
+[node name="World" type="Node2D"]
+scale = Vector2( 1, 0.985787 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+offset = Vector2( 160, 90 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 180 )
+
+[node name="Encounter" parent="." instance=ExtResource( 5 )]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 199.801, 52.0148 )
+
+[node name="NPC" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 39.2693, 17.2772 )
+
+[node name="Candlestick low" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 58.225, 43.8159 )

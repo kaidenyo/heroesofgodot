@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://NPCENEMYPLAYER/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://CombatScene.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Music/Random battle.wav" type="AudioStream" id=3]
+
+[node name="CombatScene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="FleeCombat" type="Control" parent="."]
+margin_left = 267.27
+margin_top = 144.771
+margin_right = 267.27
+margin_bottom = 144.771
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="FleeCombat"]
+margin_right = 39.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FleeCombat"]
+margin_left = 5.66324
+margin_top = 4.95534
+margin_right = 37.6632
+margin_bottom = 20.9553
+bbcode_text = "FLEE"
+text = "FLEE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 172.804, 73.9989 )
+[connection signal="pressed" from="FleeCombat/Button" to="." method="_on_Button_pressed"]
